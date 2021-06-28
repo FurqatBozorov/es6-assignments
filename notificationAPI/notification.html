@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./notification.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id='main-container'>
+        <div id='form-div'>
+            <form onsubmit="addNotification(event)" >
+                <label for="title"> Title: </label>
+                <input  id ='title' type="text" name="title" required>
+                <label for="hours"> Time: </label>
+                <input  id ='hours' type="time" name='hours'required>
+                <label for="date"> Date: </label>
+                <input  id ='date' type="date" name='date'required>
+                <button  type="submit">Add</button>
+            </form>
+
+        </div>
+        <div id='dashboards'>
+            <div id='future'>
+                <h2>Future notifications</h2>
+            </div>
+            <div id='past'>
+                <h2> Past notifications</h2>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <script src="./notification.js"></script>
+</body>
+</html>

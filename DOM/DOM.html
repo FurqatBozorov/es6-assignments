@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .header{
+            margin-left: 20px ;
+        }
+        .disc{
+            margin-left: 10px;
+        }
+        .rectangles{
+            width: 50px;
+            height: 50px;
+            margin-top: 10px;
+        }
+        #rectangleWrapper{
+            padding-top: 50px;
+            padding-left: 50px;
+            padding-right: 50px;
+            padding-bottom: 0px;
+        }
+
+    </style>
+</head>
+<body>
+
+
+<script>
+    bodyTag=document.getElementsByTagName('body')
+    headerTag=document.createElement('h1')
+    headerTag.innerText='DOM Assignment Page'
+    headerTag.className= 'header'
+    bodyTag[0].appendChild(headerTag)
+    discTag=document.createElement('h2')
+    discTag.innerText='I am creating a web page using DOM' 
+    discTag.className = 'disc'
+    bodyTag[0].appendChild(discTag)
+    
+    let colors = ['#CD5C5C', '#FFBF00', '#DE3163', '#9FE2BF', '#6495ED', '#CCCCFF', '#8B0000', '#FF1493', '#BDB76B', '#663399']
+
+    wrapper = document.createElement('div');
+    wrapper.id = 'rectangleWrapper'
+
+    for(let i=0; i<colors.length-1; i++){
+        rectangles = document.createElement('div')
+        rectangles.className='rectangles'        
+        rectangles.style.background = colors[i];
+        rectangles.id = colors[i];
+        wrapper.appendChild(rectangles); 
+        colorName = document.createElement('p')
+        colorName.innerText = colors[i]
+        wrapper.appendChild(colorName);
+    }
+    bodyTag[0].appendChild(wrapper)
+
+   const massageLog=(arr)=>{
+        console.log('Here are the rectangle IDs:');
+        for(item of arr){
+            console.log(item);
+        }
+    }
+    bodyTag.onload = massageLog(colors)
+    document.title = headerTag.innerText
+    
+    </script>    
+</body>
+
+</html>
